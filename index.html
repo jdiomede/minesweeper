@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>minesweeper</title>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="js/minesweeper.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">new game</a>
+                <ul>  
+                    <li><a href="index.html?beginner">beginner</a></li>
+                    <li><a href="index.html?intermediate">intermediate</a></li>
+                    <li><a href="index.html?expert">hard</a></li> 
+                </ul>  
+            </li>  
+            <li><a href="javascript:void(0)" onclick="validateGame()">validate game</a></li>  
+            <li><a href="javascript:void(0)" onclick="toggleBombs()">toggle bombs</a></li>
+            <li><a href="javascript:void(0)" onclick="exposeBoard()">expose board</a></li>
+            <li class="smileyFace"><p style="background-image: url(images/smiley-face_sm.bmp)" id="facecontainer"><img src="images/smiley-face_sm.bmp" id="face"></p></li>
+        </ul> 
+    </nav>
+    <table border="0" width="100%"><tr><td>
+        <script type="text/javascript" language="JavaScript">
+            mySearch = location.search.substr(1);
+            startGame(mySearch);
+        </script>
+    </td></tr></table>
+    <script src="js/modernizr.js"></script>
+</body>
+</html>
