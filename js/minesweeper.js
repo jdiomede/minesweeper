@@ -162,7 +162,7 @@ function handleMouseEvent(fid, event) {
                 } break;
             }
         } else if(userMoves[y][x] != 2) {
-            //if the user has not flagged this square proceed with checking this square
+            //if the user has not flagged this square proceed with checking for mines
             userMoves[y][x] = 1;
             img = document.getElementById(fid);
             if(bombArray[y][x] == 1) {
