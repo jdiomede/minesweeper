@@ -1,0 +1,10 @@
+Features provided with this html/css/javascript implementation include:
+(1) start a new randomly generated game with one of three levels of difficulty
+(2) validate the current game (all squares have been exposed, no mines)
+(3) cheat and expose all mines (but remain in an active game)
+(4) flag potential mines (and protect from selecting the square until the flag is removed)
+
+The game begins as soon as the page loads, or when a new game has been selected with one of the three difficulty levels, however there is no time limit imposed on the user.
+
+Regards,
+James
