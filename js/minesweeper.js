@@ -110,7 +110,7 @@ function startGame(gameOptions) {
     for (y = 0; y < boardSize; y++) {
         document.write('<tr>');
         for (x = 0; x < boardSize; x++) {
-            document.write('<td><img src="images/hidden.jpg" height="20" width="20" id="'+z+'" onmouseup="handleMouseEvent(id, event)"></td>');
+            document.write('<td><img src="images/hidden.jpg" height="20" width="20" id="'+z+'" onmouseup="handleMouseEvent(id, event)" oncontextmenu="return false;"></td>');
             z++;
         }
         document.write('</tr>');
@@ -144,6 +144,7 @@ function handleMouseEvent(fid, event) {
     var y = Math.floor(id/boardSize);
     var x = id - (y*boardSize);
     var img;
+    //document.write(event.button);
     if(!endGame) {
         if(event.button == 2) {
             //detect right mouse button event and toggle flagging

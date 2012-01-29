@@ -1,3 +1,5 @@
+1/29/12: updated javascript to handle removing the context menu on a right mouse click event, also there is a problem with safari browsers (currently testing version 5.1.2) where a right mouse click is not passed correctly as an event equal to "2"; this issue is still under investigation, in the meantime firefox (currently using version 9.0.1) handles this properly.
+
 Features provided with this html/css/javascript implementation include:
 (1) start a new randomly generated game with one of three levels of difficulty
 (2) validate the current game (all squares have been exposed, no mines)
