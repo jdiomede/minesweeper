@@ -35,72 +35,52 @@ function startGame(gameOptions) {
             } else if(x == (boardSize-1)) {
                 blockEast = true;
             }
-            for(direction = 0; direction < 8; direction++) {
-                switch(direction) {
-                    case 0:
-                    {//east
-                        if(!blockEast) {
-                            if(bombArray[y][x+1] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 1:
-                    {//northeast
-                        if(!blockNorth && !blockEast) {
-                            if(bombArray[y-1][x+1] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 2:
-                    {//north
-                        if(!blockNorth) {
-                            if(bombArray[y-1][x] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 3:
-                    {//northwest
-                        if(!blockNorth && !blockWest) {
-                            if(bombArray[y-1][x-1] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 4:
-                    {//west
-                        if(!blockWest) {
-                            if(bombArray[y][x-1] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 5:
-                    {//southwest
-                        if(!blockSouth && !blockWest) {
-                            if(bombArray[y+1][x-1] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 6:
-                    {//south
-                        if(!blockSouth) {
-                                if(bombArray[y+1][x] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
-                    case 7:
-                    {//southeast
-                        if(!blockSouth && !blockEast) {
-                            if(bombArray[y+1][x+1] == 1) {
-                                mineField[y][x] += 1;
-                            }
-                        }
-                    } break;
+            //east
+            if(!blockEast) {
+                if(bombArray[y][x+1] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //northeast
+            if(!blockNorth && !blockEast) {
+                if(bombArray[y-1][x+1] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //north
+            if(!blockNorth) {
+                if(bombArray[y-1][x] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //northwest
+            if(!blockNorth && !blockWest) {
+                if(bombArray[y-1][x-1] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //west
+            if(!blockWest) {
+                if(bombArray[y][x-1] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //southwest
+            if(!blockSouth && !blockWest) {
+                if(bombArray[y+1][x-1] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //south
+            if(!blockSouth) {
+                    if(bombArray[y+1][x] == 1) {
+                    mineField[y][x] += 1;
+                }
+            }
+            //southeast
+            if(!blockSouth && !blockEast) {
+                if(bombArray[y+1][x+1] == 1) {
+                    mineField[y][x] += 1;
                 }
             }
         }
@@ -193,72 +173,52 @@ function recursiveExposure(y, x) {
     } else if(x == (boardSize-1)) {
         blockEast = true;
     }
-    for(direction = 0; direction < 8; direction++) {
-        switch(direction) {
-            case 0:
-            {//east
-                if(!blockEast) {
-                    if(bombArray[y][x+1] != 1) {
-                        openImage(y,x+1);
-                    }
-                }
-            } break;
-            case 1:
-            {//northeast
-                if(!blockNorth && !blockEast) {
-                    if(bombArray[y-1][x+1] != 1) {
-                        openImage(y-1,x+1);
-                    }
-                }
-            } break;
-            case 2:
-            {//north
-                if(!blockNorth) {
-                    if(bombArray[y-1][x] != 1) {
-                        openImage(y-1,x);
-                    }
-                }
-            } break;
-            case 3:
-            {//northwest
-                if(!blockNorth && !blockWest) {
-                    if(bombArray[y-1][x-1] != 1) {
-                        openImage(y-1,x-1);
-                    }
-                }
-            } break;
-            case 4:
-            {//west
-                if(!blockWest) {
-                    if(bombArray[y][x-1] != 1) {
-                        openImage(y,x-1);
-                    }
-                }
-            } break;
-            case 5:
-            {//southwest
-                if(!blockSouth && !blockWest) {
-                    if(bombArray[y+1][x-1] != 1) {
-                        openImage(y+1,x-1);
-                    }
-                }
-            } break;
-            case 6:
-            {//south
-                if(!blockSouth) {
-                        if(bombArray[y+1][x] != 1) {
-                        openImage(y+1,x);
-                    }
-                }
-            } break;
-            case 7:
-            {//southeast
-                if(!blockSouth && !blockEast) {
-                    if(bombArray[y+1][x+1] != 1) {
-                        openImage(y+1,x+1);
-                    }
-                }
-            } break;
+    //east
+    if(!blockEast) {
+        if(bombArray[y][x+1] != 1) {
+            openImage(y,x+1);
+        }
+    }
+    //northeast
+    if(!blockNorth && !blockEast) {
+        if(bombArray[y-1][x+1] != 1) {
+            openImage(y-1,x+1);
+        }
+    }
+    //north
+    if(!blockNorth) {
+        if(bombArray[y-1][x] != 1) {
+            openImage(y-1,x);
+        }
+    }
+    //northwest
+    if(!blockNorth && !blockWest) {
+        if(bombArray[y-1][x-1] != 1) {
+            openImage(y-1,x-1);
+        }
+    }
+    //west
+    if(!blockWest) {
+        if(bombArray[y][x-1] != 1) {
+            openImage(y,x-1);
+        }
+    }
+    //southwest
+    if(!blockSouth && !blockWest) {
+        if(bombArray[y+1][x-1] != 1) {
+            openImage(y+1,x-1);
+        }
+    }
+    //south
+    if(!blockSouth) {
+            if(bombArray[y+1][x] != 1) {
+            openImage(y+1,x);
+        }
+    }
+    //southeast
+    if(!blockSouth && !blockEast) {
+        if(bombArray[y+1][x+1] != 1) {
+            openImage(y+1,x+1);
         }
     }
 }
